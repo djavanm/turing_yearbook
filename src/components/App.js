@@ -3,7 +3,7 @@ import Cohort from './Cohort';
 import people from '../data/yearbook-data.js';
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,4 +23,3 @@ class App extends Component {
   }
 }
 
-export default App;

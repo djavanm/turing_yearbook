@@ -2,6 +2,12 @@ import React from 'react';
 import Person from './Person';
 import './Cohort.css';
 
-// COHORT COMPONENT CODE GOES HERE
+const Cohort = () => {
+  return (
+    <div>
+      Hi, I'm a person
+    </div>
+  )
+};
 
 export default Cohort;
