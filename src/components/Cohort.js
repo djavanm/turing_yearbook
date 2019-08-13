@@ -2,11 +2,14 @@ import React from 'react';
 import Person from './Person';
 import './Cohort.css';
 
-const Cohort = () => {
+const Cohort = ({ staff }) => {
+  const staffCards = staff.map(member => (
+    <Person person={member} key={member.id}/>
+  ))
   return (
-    <div>
-      Hi, I'm a person
-    </div>
+    <section className='staff-container'>
+      {staffCards}
+    </section>
   )
 };
 
