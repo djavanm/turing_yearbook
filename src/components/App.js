@@ -18,7 +18,8 @@ export default class App extends Component {
       <header className="App-header">
       <h1>Turing Yearbook</h1>
       </header>
-        <Cohort staff={this.state.staff} students={this.state.students}/>
+        <Cohort people={this.state.staff} groupName='Staff' />
+        <Cohort people={this.state.students} groupName='Students' />
       </div>
     );
   }

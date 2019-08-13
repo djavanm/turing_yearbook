@@ -3,11 +3,13 @@
   box-sizing: border-box;
 }
 
-.staff-container,
-.student-container {
+.people-container {
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
-  height: 90vh;
+}
+
+h2 {
+  display: block;
 }
