@@ -2,9 +2,9 @@ import React from 'react';
 import Person from './Person';
 import './Cohort.css';
 
-const Cohort = ({ people, groupName }) => {
+const Cohort = ({ people, groupName, editable }) => {
   const cards = people.map(member => (
-    <Person person={member} key={member.id}/>
+    <Person person={member} key={member.id} editable={editable} />
   ))
   return (
     <React.Fragment>
