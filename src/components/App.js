@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Cohort from './Cohort';
 import people from '../data/yearbook-data.js';
+import Form from './Form'
 import './App.css';
 
 export default class App extends Component {
@@ -12,11 +13,25 @@ export default class App extends Component {
     }
   }
 
+  addStudent = (student) => {
+    let newStudent = {
+      id: Date.now(),
+      name: student,
+      quote: '',
+      superlative: '',
+      photo: 'https://placekitten.com/200/300'
+    }
+    this.setState({
+      students: [...this.state.students, newStudent]
+    })
+  }
+
   render() {
     return (
       <div className="App">
       <header className="App-header">
       <h1>Turing Yearbook</h1>
+      <Form  addStudent={this.addStudent}/>
       </header>
         <Cohort people={this.state.staff} groupName='Staff' />
         <Cohort people={this.state.students} groupName='Students' />
