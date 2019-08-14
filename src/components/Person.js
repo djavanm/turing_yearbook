@@ -5,44 +5,45 @@ export default class Person extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: props.person.name,
+      name: props.person.name || '',
       quote: props.person.quote,
       superlative: props.person.superlative,
       person: props.person,
       editable: props.editable,
-      key: props.key
   }
 }
-
-updateInput = (e, key) => {
+updateInput= (e, prop) => {
+    const id = e.target.closest('article').dataset.id;
     this.setState({
-      [key]: e.target.value
+      [prop]: e.target.innerText
     })
-    console.log(this.state)
   }
   render() {
     const { id, photo, name, quote, superlative} = this.state.person;
     return (
-      <article key={id}>
+      <article data-id={id}>
         <img src={photo} alt={`${name}'s avatar`} />
         <h3 
         contentEditable={this.state.editable} 
-        onInput={(e) => this.updateInput(e, 'name')}
+        onKeyUp={(e) => this.updateInput(e, 'name')}
         suppressContentEditableWarning={true} 
+        name='name'
         >
-          {name === '' ? 'Name' : this.state.name}
+          {name === '' ? 'Name' : this.name}
         </h3>
         <p 
         contentEditable={this.state.editable} 
-        onInput={(e) => this.updateInput(e, 'quote')}
+        onKeyUp={(e) => this.updateInput(e, 'quote')}
         suppressContentEditableWarning={true} 
+        name='quote'
         >
           {quote === '' ? 'Quote' : this.state.quote}
         </p>
         <h4 
         contentEditable={this.state.editable} 
-        onInput={(e) => this.updateInput(e, 'superlative')}
+        onKeyUp={(e) => this.updateInput(e, 'superlative')}
         suppressContentEditableWarning={true} 
+        name='superlative'
         >
           {superlative === '' ? 'Superlative' : this.state.superlative}
         </h4> 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Person from './Person';
 import './Cohort.css';
 
@@ -7,12 +7,12 @@ const Cohort = ({ people, groupName, editable }) => {
     <Person person={member} key={member.id} editable={editable} />
   ))
   return (
-    <React.Fragment>
+    <Fragment>
     <h2>{groupName}</h2>
     <section className='people-container'>
       {cards}
     </section>
-    </React.Fragment>
+    </Fragment>
   )
 };
 
