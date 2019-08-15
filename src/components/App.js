@@ -26,6 +26,14 @@ export default class App extends Component {
     })
   }
 
+  updatePerson = (person) => {
+    console.log(person)
+    const updatedStudents = this.state.students.map(student => {
+      return student.id === person.id ? person : student
+    })
+    this.setState({students: [...updatedStudents]})
+  }
+
   render() {
     return (
       <div className="App">

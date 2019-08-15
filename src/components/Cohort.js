@@ -3,8 +3,9 @@ import Person from './Person';
 import './Cohort.css';
 
 const Cohort = ({ people, groupName, editable, updatePerson }) => {
+  console.log(updatePerson)
   const cards = people.map(member => (
-    <Person person={member} key={member.id} editable={editable} udpatePerson={updatePerson} />
+    <Person person={member} key={member.id} editable={editable} updatePerson={updatePerson} />
   ))
   return (
     <Fragment>

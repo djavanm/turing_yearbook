@@ -16,6 +16,7 @@ updateInput= (e, prop) => {
     this.setState({
       [prop]: e.target.innerText
     })
+    this.props.updatePerson(this.state)
   }
   render() {
     const { id, photo, name, quote, superlative} = this.state;
@@ -23,29 +24,25 @@ updateInput= (e, prop) => {
       <article data-id={id}>
         <img src={photo} alt={`${name}'s avatar`} />
         <h3 
-        contentEditable={this.state.editable} 
-        onKeyUp={(e) => this.updateInput(e, 'name')}
-        onBlur={() => this.props.updatePerson(this.state)}
+        contentEditable={this.props.editable} 
+        onBlur={(e) => this.updateInput(e, 'name')}
         suppressContentEditableWarning={true} 
-        name='name'
         >
-          {name === '' ? 'Name' : this.name}
+          {name === '' ? 'Enter a Name' : name}
         </h3>
         <p 
-        contentEditable={this.state.editable} 
-        onKeyUp={(e) => this.updateInput(e, 'quote')}
+        contentEditable={this.props.editable} 
+        onBlur={(e) => this.updateInput(e, 'quote')}
         suppressContentEditableWarning={true} 
-        name='quote'
         >
-          {quote === '' ? 'Quote' : this.state.quote}
+          {quote === '' ? 'Enter a Quote' : quote}
         </p>
         <h4 
-        contentEditable={this.state.editable} 
-        onKeyUp={(e) => this.updateInput(e, 'superlative')}
+        contentEditable={this.props.editable} 
+        onBlur={(e) => this.updateInput(e, 'superlative')}
         suppressContentEditableWarning={true} 
-        name='superlative'
         >
-          {superlative === '' ? 'Superlative' : this.state.superlative}
+          {superlative === '' ? 'Enter a Superlative' : superlative}
         </h4> 
       </article>
     )
