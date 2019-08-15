@@ -34,6 +34,14 @@ export default class App extends Component {
     this.setState({students: [...updatedStudents]})
   }
 
+  removePerson = (person) => {
+    const filteredStudents = this.state.students.filter(student => {
+      return student.id !== person.id
+    })
+    this.setState({students: [...filteredStudents]})
+    console.log('hi')
+  }
+
   render() {
     return (
       <div className="App">
@@ -41,8 +49,8 @@ export default class App extends Component {
       <h1>Turing Yearbook</h1>
       <Form  addStudent={this.addStudent}/>
       </header>
-        <Cohort people={this.state.staff} groupName='Staff' editable={false} updatePerson={this.updatePerson} />
-        <Cohort people={this.state.students} groupName='Students' editable={true} updatePerson={this.updatePerson} />
+        <Cohort people={this.state.staff} groupName='Staff' editable={false} updatePerson={this.updatePerson} removePerson={this.removePerson} />
+        <Cohort people={this.state.students} groupName='Students' editable={true} updatePerson={this.updatePerson} removePerson={this.removePerson}/>
       </div>
     );
   }

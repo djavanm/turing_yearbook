@@ -18,32 +18,39 @@ updateInput= (e, prop) => {
     })
     this.props.updatePerson(this.state)
   }
+
   render() {
     const { id, photo, name, quote, superlative} = this.state;
+    const { editable, removePerson } = this.props;
     return (
       <article data-id={id}>
         <img src={photo} alt={`${name}'s avatar`} />
         <h3 
-        contentEditable={this.props.editable} 
+        contentEditable={editable} 
         onBlur={(e) => this.updateInput(e, 'name')}
         suppressContentEditableWarning={true} 
         >
           {name === '' ? 'Enter a Name' : name}
         </h3>
         <p 
-        contentEditable={this.props.editable} 
+        contentEditable={editable} 
         onBlur={(e) => this.updateInput(e, 'quote')}
         suppressContentEditableWarning={true} 
         >
           {quote === '' ? 'Enter a Quote' : quote}
         </p>
         <h4 
-        contentEditable={this.props.editable} 
+        contentEditable={editable} 
         onBlur={(e) => this.updateInput(e, 'superlative')}
         suppressContentEditableWarning={true} 
         >
           {superlative === '' ? 'Enter a Superlative' : superlative}
         </h4> 
+        {this.props.editable && (
+            <button className='button' onClick={() => removePerson(this.state)}>
+              Delete
+            </button>
+            )}
       </article>
     )
   }
