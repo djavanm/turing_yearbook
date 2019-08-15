@@ -11,7 +11,7 @@ const Cohort = ({ people, groupName, editable, updatePerson }) => {
     <Fragment>
     <h2>{groupName}</h2>
     <section className='people-container'>
-      {cards}
+      { cards }
     </section>
     </Fragment>
   )

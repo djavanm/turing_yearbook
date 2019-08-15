@@ -12,7 +12,6 @@ export default class Form extends Component{
     this.setState({
       name: e.target.value
     })
-    console.log(this.props.addStudent)
   }
   submitStudent = (e) =>  {
     e.preventDefault();
