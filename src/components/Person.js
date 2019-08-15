@@ -12,11 +12,17 @@ export default class Person extends Component {
       photo: props.person.photo,
   }
 }
-updateInput= (e, prop) => {
+updateInput = (e, prop) => {
     this.setState({
       [prop]: e.target.innerText
     })
     this.props.updatePerson(this.state)
+  }
+
+  clearInput = (e) => {
+    if(this.props.editable) {
+      e.target.innerText = '';
+    }
   }
 
   render() {
@@ -27,6 +33,7 @@ updateInput= (e, prop) => {
         <img src={photo} alt={`${name}'s avatar`} />
         <h3 
         contentEditable={editable} 
+        onClick={(e) => this.clearInput(e)}
         onBlur={(e) => this.updateInput(e, 'name')}
         suppressContentEditableWarning={true} 
         >
@@ -34,6 +41,7 @@ updateInput= (e, prop) => {
         </h3>
         <p 
         contentEditable={editable} 
+        onClick={(e) => this.clearInput(e)}
         onBlur={(e) => this.updateInput(e, 'quote')}
         suppressContentEditableWarning={true} 
         >
@@ -41,6 +49,7 @@ updateInput= (e, prop) => {
         </p>
         <h4 
         contentEditable={editable} 
+        onClick={(e) => this.clearInput(e)}
         onBlur={(e) => this.updateInput(e, 'superlative')}
         suppressContentEditableWarning={true} 
         >
