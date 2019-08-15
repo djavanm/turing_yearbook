@@ -5,27 +5,27 @@ export default class Person extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: props.person.name || '',
+      id: props.person.id,
+      name: props.person.name,
       quote: props.person.quote,
       superlative: props.person.superlative,
-      person: props.person,
-      editable: props.editable,
+      photo: props.person.photo,
   }
 }
 updateInput= (e, prop) => {
-    const id = e.target.closest('article').dataset.id;
     this.setState({
       [prop]: e.target.innerText
     })
   }
   render() {
-    const { id, photo, name, quote, superlative} = this.state.person;
+    const { id, photo, name, quote, superlative} = this.state;
     return (
       <article data-id={id}>
         <img src={photo} alt={`${name}'s avatar`} />
         <h3 
         contentEditable={this.state.editable} 
         onKeyUp={(e) => this.updateInput(e, 'name')}
+        onBlur={() => this.props.updatePerson(this.state)}
         suppressContentEditableWarning={true} 
         name='name'
         >

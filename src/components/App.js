@@ -33,8 +33,8 @@ export default class App extends Component {
       <h1>Turing Yearbook</h1>
       <Form  addStudent={this.addStudent}/>
       </header>
-        <Cohort people={this.state.staff} groupName='Staff' editable={false} />
-        <Cohort people={this.state.students} groupName='Students' editable={true} />
+        <Cohort people={this.state.staff} groupName='Staff' editable={false} updatePerson={this.updatePerson} />
+        <Cohort people={this.state.students} groupName='Students' editable={true} updatePerson={this.updatePerson} />
       </div>
     );
   }
