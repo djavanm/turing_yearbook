@@ -37,7 +37,7 @@ updateInput = (e, prop) => {
         onBlur={(e) => this.updateInput(e, 'name')}
         suppressContentEditableWarning={true} 
         >
-          {name === '' ? 'Enter a Name' : name}
+          { name === '' ? 'Enter a Name' : `{ ${name} }` }
         </h3>
         <p 
         contentEditable={editable} 
@@ -45,7 +45,7 @@ updateInput = (e, prop) => {
         onBlur={(e) => this.updateInput(e, 'quote')}
         suppressContentEditableWarning={true} 
         >
-          {quote === '' ? 'Enter a Quote' : quote}
+          { quote === '' ? 'Enter a Quote' : quote }
         </p>
         <h4 
         contentEditable={editable} 
@@ -53,7 +53,7 @@ updateInput = (e, prop) => {
         onBlur={(e) => this.updateInput(e, 'superlative')}
         suppressContentEditableWarning={true} 
         >
-          {superlative === '' ? 'Enter a Superlative' : superlative}
+          { superlative === '' ? 'Enter a Superlative' : superlative }
         </h4> 
         {this.props.editable && (
             <button className='button' onClick={() => removePerson(this.state)}>

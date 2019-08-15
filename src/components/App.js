@@ -39,14 +39,13 @@ export default class App extends Component {
       return student.id !== person.id
     })
     this.setState({students: [...filteredStudents]})
-    console.log('hi')
   }
 
   render() {
     return (
       <div className="App">
       <header className="App-header">
-      <h1>Turing Yearbook</h1>
+      <h1>{`{ Turing Yearbook }`}</h1>
       <Form  addStudent={this.addStudent}/>
       </header>
         <Cohort people={this.state.staff} groupName='Staff' editable={false} updatePerson={this.updatePerson} removePerson={this.removePerson} />
