@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Person matches the staff snapshot created for Person  1`] = `
+<article
+  data-id={1}
+>
+  <img
+    alt="Eric's avatar"
+    src="./eric.jpg"
+  />
+  <h3
+    contentEditable={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    suppressContentEditableWarning={true}
+  >
+    { Eric }
+  </h3>
+  <p
+    contentEditable={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    suppressContentEditableWarning={true}
+  >
+    You miss all the shots you don't take.
+  </p>
+  <h4
+    contentEditable={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    suppressContentEditableWarning={true}
+  >
+    Most Likely to Win the PGA
+  </h4>
+</article>
+`;
+
+exports[`Person matches the student snapshot created for Person  1`] = `
+<article
+  data-id={21}
+>
+  <img
+    alt="Abigail's avatar"
+    src="https://placekitten.com/200/300"
+  />
+  <h3
+    contentEditable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    suppressContentEditableWarning={true}
+  >
+    { Abigail }
+  </h3>
+  <p
+    contentEditable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    suppressContentEditableWarning={true}
+  >
+    Enter a Quote
+  </p>
+  <h4
+    contentEditable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    suppressContentEditableWarning={true}
+  >
+    Enter a Superlative
+  </h4>
+  <button
+    className="button"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</article>
+`;
