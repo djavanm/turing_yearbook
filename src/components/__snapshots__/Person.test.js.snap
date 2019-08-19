@@ -71,7 +71,17 @@ exports[`Person matches the student snapshot created for Person  1`] = `
     className="button"
     onClick={[Function]}
   >
+    <span
+      className="visible"
+    >
+      { 
+    </span>
     Delete
+    <span
+      className="visible"
+    >
+        }
+    </span>
   </button>
 </article>
 `;

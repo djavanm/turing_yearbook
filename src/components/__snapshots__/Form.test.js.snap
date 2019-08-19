@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form matches the Form snapshot created for Form  1`] = `
+<form>
+  <input
+    className="student-input"
+    name="studentName"
+    onChange={[Function]}
+    placeholder="Student Name"
+    type="text"
+    value=""
+  />
+  <button
+    className="student-button"
+    id="student-button"
+    onClick={[Function]}
+  >
+    <span
+      className="visible"
+    >
+      {  
+    </span>
+    Add Student
+    <span
+      className="visible"
+    >
+        }
+    </span>
+  </button>
+</form>
+`;
