@@ -58,7 +58,9 @@ updateInput = (e, prop) => {
         </h4> 
         {this.props.editable && (
             <button className='button' onClick={() => removePerson(this.state)}>
+              <span className='visible'>{`{  `}</span>
               Delete
+              <span className='visible'>{`  }`}</span>
             </button>
             )}
       </article>

@@ -15,3 +15,22 @@ article {
   font-size: 1.3em;
 }
 
+button {
+  height: 32px;
+  border: none;
+  margin: auto;
+  font-size: 16px;
+  font-weight: 600;
+  background: none;
+  color:black;
+  margin-top: 4px;
+  display: block;
+}
+
+.visible {
+  visibility: hidden;
+}
+
+button:hover .visible {
+  visibility: visible;
+}
