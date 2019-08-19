@@ -31,9 +31,12 @@ export default class Form extends Component{
           />
           <button
             className='student-button'
+            id="student-button"
             onClick={e => this.submitStudent(e)}
             >
+            <span className='visible'>{`{  `}</span>
             Add Student
+            <span className='visible'>{`  }`}</span>
           </button>
       </form>
     )

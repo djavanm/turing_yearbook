@@ -1,4 +1,27 @@
 .student-input {
-height: 120px;
+height: 32px;
+border: 1px solid black;
+margin: 5px;
+font-size: 16px;
+text-align: center;
+}
 
+.student-button {
+  height: 32px;
+  border: none;
+  margin: auto;
+  font-size: 22px;
+  font-weight: 600;
+  background: none;
+  color: white;
+  margin-top: 4px;
+  display: block;
+}
+
+.visible {
+  visibility: hidden;
+}
+
+#student-button:hover .visible{
+  visibility: visible;
 }
